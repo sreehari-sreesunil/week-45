@@ -2,8 +2,8 @@ from src.data import load_data, clean_data
 from src.model import train_model
 from src.metrics import evaluate 
 
-def run(path):
-    df = load_data(path)
+def run():
+    df = load_data("C:\projects\Python\week_45\student_scores.csv")
     df = clean_data(df)
 
     x = df[['Hours']]
