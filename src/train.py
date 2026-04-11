@@ -14,3 +14,5 @@ def run(path):
 
     mse = evaluate(y, preds)
     print("MSE :", mse)
+
+    print("Traning completed")
