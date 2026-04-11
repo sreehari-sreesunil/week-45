@@ -16,5 +16,5 @@ jobs:
         python-version: "3.10"
 
     - run: pip install -r requirements.txt
-    - run: PYTHONPATH=. python -m  pytest
+    - run: PYTHONPATH=. python -m pytest
   
