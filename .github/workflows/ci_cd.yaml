@@ -1,0 +1,25 @@
+name: CI/CD 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - run: pip install -r requirements.txt
+    - run: python -m  pytest
+  
+  cd:
+    needs: ci
+    runs-on: ubuntu-latest 
+    if: github.ref == 'refs/head/main'
+    - run: echo "Deploying model..."
